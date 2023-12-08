@@ -16,5 +16,5 @@ def generate_noisy_sine(A=1, xmin=-5, xmax=5, n_points=100, T=10, y_noise_scale=
 
 def generate_3d_sine(A=1, xmin=-5, xmax=5, n_points=100, T=10, y_noise_scale=1):
     twod_sine = generate_noisy_sine(A=A, xmin=xmin, xmax=xmax, n_points=n_points, T=T, y_noise_scale=y_noise_scale)
-    z = np.ones((len(twod_sine),1))
-    return np.column_stack((twod_sine,z))
+    z_noise = [np.random.normal(scale=0.5) for _ in range(len(twod_sine))]
+    return np.column_stack((twod_sine,z_noise))
