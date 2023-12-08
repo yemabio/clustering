@@ -10,9 +10,9 @@ def plot_data(data,pca=None, xmin=-5,ymin=-5,zmin=-5,xmax=5,ymax=5,zmax=5,pc_sca
         ax.set(xlim=(xmin-1, xmax+1), ylim=(ymin-1, ymax+1), zlim=(zmin-1, zmax+1),aspect='equal')
         if pca:
             origin = np.array([0,0,0])
+
             for component, ev, perc_ev in zip(pca.components_, pca.explained_variance_, pca.explained_variance_ratio_):
                 ax.quiver(*origin,component[0], component[1], component[2], color='r',scale=pc_scale/ev,label=perc_ev)
-        ax.legend()
             
     else:
         ax = plt.axes()
@@ -21,8 +21,6 @@ def plot_data(data,pca=None, xmin=-5,ymin=-5,zmin=-5,xmax=5,ymax=5,zmax=5,pc_sca
             origin = np.array([0,0])
             for component, ev, perc_ev in zip(pca.components_, pca.explained_variance_, pca.explained_variance_ratio_):
                 ax.quiver(*origin,component[0], component[1], color='r',scale=pc_scale/ev, label=perc_ev)
-        ax.legend()
-
         ax.set(xlim=(xmin-1, xmax+1), ylim=(ymin-1, ymax+1), aspect='equal')
 
         # Set bottom and left spines as x and y axes of coordinate system
