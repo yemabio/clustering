@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
-
+#TODO: code for visualizing the PCs with the highest usage
+#TODO: Move codeblocks to modules 
 def plot_data(data,pca=None,color=[], pc_scale=4,s=1,three_d=False,figsize=(3,3)):
     fig = plt.figure(figsize=figsize)
     # if color == None:
