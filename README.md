@@ -23,3 +23,5 @@ To install, make sure you have Python and conda installed on your machine. Then,
 5) Install repository
     
 ```pip install -e .```
+
+The notebooks should be viewed in this order: 1) ```dimensionality_reduction.ipynb```; 2) ```clustering_mnist.ipynb```; 3) ```clustering_fashion.ipynb```/ 
